@@ -31,7 +31,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 	//NOMBRE
 	printf("Introduce nombre: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	char *nombre;
 	int longitudNombre=0;
@@ -45,7 +47,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 
 		printf("Introduzca otra vez el nombre\n");
 		fflush (stdout);
+		fflush (stdin);
 		fgets(str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		char *nombre;
 		int longitudNombre2=0;
@@ -61,7 +65,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 	//PRIMER APELLIDO
 	printf("Introduce el primer apellido: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	char *apellido;
 	int longitudapellido=0;
@@ -75,7 +81,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 
 		printf("Introduzca otra vez el primer apellido\n");
 		fflush (stdout);
+		fflush (stdin);
 		fgets(str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		char *apellido;
 		int longitudapellido2=0;
@@ -91,7 +99,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 	//SEGUNDO APELLIDO
 	printf("Introduce el segundo apellido: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	char * apellido4;
 	int longitudapellido4=0;
@@ -105,7 +115,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 
 		printf("Introduzca otra vez el segundo apellido\n");
 		fflush (stdout);
+		fflush (stdin);
 		fgets(str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		char *apellido4;
 		int longitudapellido4=0;
@@ -123,7 +135,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 	printf("Introduce la contrasena \n");
 	printf ("No os preocupeis que no hay ninguna restriccion\n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	sscanf (str, "%s", (s)->contrasena);
 
@@ -137,7 +151,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 	do{
 
 		comprobarSueldo=0;
+		fflush (stdin);
 		fgets (str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		char * sueldo;
 		int longitudsueldo=0;
@@ -151,7 +167,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 
 			printf("Introduzca otra vez el sueldo\n");
 			fflush (stdout);
+			fflush (stdin);
 			fgets(str, MAX_LINE, stdin);
+			fflush (stdin);
 
 			char *sueldo;
 			int longitudsueldo=0;
@@ -181,7 +199,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 	//EDAD
 	printf("Introduce la edad:\n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	char * edad;
 	int longitudedad=0;
@@ -195,7 +215,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 
 		printf("Introduzca otra vez la edad\n");
 		fflush (stdout);
+		fflush (stdin);
 		fgets(str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		char *edad;
 		int longitudedad=0;
@@ -222,7 +244,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 
 		comprobar=0;
 		comprobar2=0;
+		fflush (stdin);
 		fgets (str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		int longitud=0;
 		longitud=strlen(str);
@@ -292,7 +316,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 	//NOMBRE
 	printf("Introduce nombre: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	char *nombre;
 	int longitudNombre=0;
@@ -306,7 +332,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 
 		printf("Introduzca otra vez el nombre\n");
 		fflush (stdout);
+		fflush (stdin);
 		fgets(str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		char *nombre;
 		int longitudNombre2=0;
@@ -322,7 +350,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 	//PRIMER APELLIDO
 	printf("Introduce el primer apellido: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	char *apellido;
 	int longitudapellido=0;
@@ -336,7 +366,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 
 		printf("Introduzca otra vez el primer apellido\n");
 		fflush (stdout);
+		fflush (stdin);
 		fgets(str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		char *apellido;
 		int longitudapellido2=0;
@@ -352,7 +384,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 	//SEGUNDO APELLIDO
 	printf("Introduce el segundo apellido: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	char * apellido2;
 	int longitudapellido2=0;
@@ -366,7 +400,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 
 		printf("Introduzca otra vez el segundo apellido\n");
 		fflush (stdout);
+		fflush (stdin);
 		fgets(str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		char *apellido2;
 		int longitudapellido2=0;
@@ -383,14 +419,18 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 	printf("Introduce la contrasena \n");
 	printf ("No os preocupeis que no hay ninguna restriccion\n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	sscanf (str, "%s", (u)->contrasena);
 
 	//EDAD
 	printf("Introduce la edad:\n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str, MAX_LINE, stdin);
+	fflush (stdin);
 
 	char * edad;
 	int longitudedad=0;
@@ -404,7 +444,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 
 		printf("Introduzca otra vez la edad\n");
 		fflush (stdout);
+		fflush (stdin);
 		fgets(str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		char *edad;
 		int longitudedad=0;
@@ -431,7 +473,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 
 		comprobar=0;
 		comprobar2=0;
+		fflush (stdin);
 		fgets (str, MAX_LINE, stdin);
+		fflush (stdin);
 
 		int longitud=0;
 		longitud=strlen(str);

@@ -19,7 +19,9 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 	//TITULO
 	printf("Introduce el titulo: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str,MAX_LINE,stdin);
+	fflush (stdin);
 
 	char * titulo;
 	int longitudTitulo=0;
@@ -34,7 +36,9 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 	//AUTOR
 	printf("Introduce el autor: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str,MAX_LINE,stdin);
+	fflush (stdin);
 
 	char* autor;
 	int longitudAutor=0;
@@ -48,7 +52,9 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 
 		printf("Introduzca otra vez el autor: \n");
 		fflush(stdout);
+		fflush (stdin);
 		fgets(str,MAX_LINE,stdin);
+		fflush (stdin);
 
 		free(autor);
 	
@@ -67,7 +73,9 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 	//EDITORIAL
 	printf("Introduce la editorial: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str,MAX_LINE,stdin);
+	fflush (stdin);
 
 	char* editorial;
 	int longitudEditorial=0;
@@ -81,7 +89,9 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 
 		printf("Introduzca otra vez la editorial: \n");
 		fflush(stdout);
+		fflush (stdin);
 		fgets(str,MAX_LINE,stdin);
+		fflush (stdin);
 
 		free(editorial);
 	
@@ -100,7 +110,9 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 	//ANYO PUBLICACION
 	printf("Introduce el anyo de publicacion: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str,MAX_LINE,stdin);
+	fflush (stdin);
 
 	char* anyo;
 	anyo= (char*)malloc((strlen(str)+1)*sizeof(char));
@@ -112,7 +124,9 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 
 		printf("Introduce otra vez el anyo de publicacion: \n");
 		fflush(stdout);
+		fflush (stdin);
 		fgets(str,MAX_LINE,stdin);
+		fflush (stdin);
 
 		free(anyo);
 		anyo= (char*)malloc((strlen(str)+1)*sizeof(char));
@@ -129,7 +143,9 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 	//CATEGORIA
 	printf("Introduce la categoria: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str,MAX_LINE,stdin);
+	fflush (stdin);
 
 	char* categoria;
 	int longitudCategoria=0;
@@ -144,7 +160,9 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 
 		printf("Introduzca otra vez la categoria: \n");
 		fflush(stdout);
+		fflush (stdin);
 		fgets(str,MAX_LINE,stdin);
+		fflush (stdin);
 
 		free(categoria);
 	

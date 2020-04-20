@@ -37,21 +37,24 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 	//AUTOR
 	printf("Introduce el autor: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str,MAX_LINE,stdin);
+	fflush (stdin);
 
 	char* autor;
 	int longitudAutor=0;
 	longitudAutor=strlen(str);
 	autor= (char*) malloc((longitudAutor+1)*sizeof(char));
 	sscanf(str, "%s", autor);
-
 	result=comprobarLetra(autor);
 
 	while(result==1){
 
 		printf("Introduzca otra vez el autor: \n");
 		fflush(stdout);
+		fflush (stdin);
 		fgets(str,MAX_LINE,stdin);
+		fflush (stdin);
 
 		free(autor);
 
@@ -69,7 +72,9 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 	//ANYO PUBLICACION
 	printf("Introduce el anyo de publicacion: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str,MAX_LINE,stdin);
+	fflush (stdin);
 
 	char* anyo;
 	anyo= (char*)malloc((strlen(str)+1)*sizeof(char));
@@ -81,7 +86,9 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 
 		printf("Introduce otra vez el anyo de publicacion: \n");
 		fflush(stdout);
+		fflush (stdin);
 		fgets(str,MAX_LINE,stdin);
+		fflush (stdin);
 
 		free(anyo);
 		anyo= (char*)malloc((strlen(str)+1)*sizeof(char));
@@ -97,7 +104,9 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 	//CATEGORIA
 	printf("Introduce la categoria: \n");
 	fflush(stdout);
+	fflush (stdin);
 	fgets(str,MAX_LINE,stdin);
+	fflush (stdin);
 
 	char* categoria;
 	int longitudCategoria=0;
@@ -112,7 +121,9 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 
 		printf("Introduzca otra vez la categoria: \n");
 		fflush(stdout);
+		fflush (stdin);
 		fgets(str,MAX_LINE,stdin);
+		fflush (stdin);
 
 		free(categoria);
 

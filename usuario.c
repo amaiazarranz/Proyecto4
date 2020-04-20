@@ -10,28 +10,43 @@
 
 void mostrarUsuarios (Usuario * u, int * size){
 
-	printf ("Todos los usuarios que tenemos por el momento son:\n");
+	if(*size==0){
+		printf("No hay ningun usuario\n");
+	}
+	else{
+		printf ("Todos los usuarios que tenemos por el momento son:\n");
 
-	for (int i=0; i<*size; i++){
+		for (int i=0; i<*size; i++){
 
-				printf ("Usuario %i) Nombre: %s, Primero Apellido: %s, Segundo Apellido %s, "
-						"DNI: %s, Edad: %i\n", (i+1), (u+i)->nombre, (u+i)->apellido1, (u+i)->apellido2, (u+i)-> dni, (u+i) ->edad);
-		}
+					printf ("Usuario %i) Nombre: %s, Primero Apellido: %s, Segundo Apellido %s, "
+							"DNI: %s, Edad: %i\n", (i+1), (u+i)->nombre, (u+i)->apellido1, (u+i)->apellido2, (u+i)-> dni, (u+i) ->edad);
+			}
+	}
+
+	printf("\n");
 }
 
 void mostrarUsuariosOrdenado (Usuario * u, int * size){
 
-	printf ("Procederemos a ordenar los usuarios del mas joven al menos joven. Espere unos segundos\n");
-
-	mergeSort(u, 0, *(size)-1);
-
-	printf ("Este es el resultado ordenado\n");
-
-	for (int i=0; i<*size; i++){
-
-		printf ("Usuario %i) Edad: %i, Nombre: %s, Primero Apellido: %s, Segundo Apellido %s, "
-				"DNI: %s\n", (i+1), (u+i)->edad, (u+i)->nombre, (u+i)->apellido1, (u+i)->apellido2, (u+i)-> dni);
+	if(*size==0){
+		printf("No hay ningun usuario introducido\n");
 	}
+	else{
+		printf ("Procederemos a ordenar los usuarios del mas joven al menos joven. Espere unos segundos\n");
+
+		mergeSort(u, 0, *(size)-1);
+
+		printf ("Este es el resultado ordenado\n");
+
+		for (int i=0; i<*size; i++){
+
+			printf ("Usuario %i) Edad: %i, Nombre: %s, Primero Apellido: %s, Segundo Apellido %s, "
+					"DNI: %s\n", (i+1), (u+i)->edad, (u+i)->nombre, (u+i)->apellido1, (u+i)->apellido2, (u+i)-> dni);
+		}
+
+	}
+
+	printf("\n");
 }
 
 void escribirFicheroUsuario (Usuario * u, int * size){
@@ -52,6 +67,7 @@ void escribirFicheroUsuario (Usuario * u, int * size){
 }
 
 void borrarUsuario (Usuario * u, int * size){
+
 
 	int num;
 	char string [10];
@@ -93,6 +109,7 @@ void borrarUsuario (Usuario * u, int * size){
 		}
 	}
 
+	printf("\n");
 }
 
 

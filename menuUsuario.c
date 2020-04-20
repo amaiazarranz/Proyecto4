@@ -13,6 +13,7 @@
 
 char mostrarMenuUsuario()
 {
+	printf("\n");
 	printf("Bienvenido eres un usuario\n");
 	printf("1. Mostrar libros\n");
 	printf("2. Mostrar DVDs\n");

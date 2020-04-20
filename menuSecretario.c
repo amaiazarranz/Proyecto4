@@ -13,6 +13,7 @@
 
 char mostrarMenuSecretario()
 {
+	printf("\n");
 	printf("0. Nuevo secretario\n");
 	printf("1. Mostrar seceretarios ordenados por salarios\n");
 	printf("2. Borrar un secretario\n");

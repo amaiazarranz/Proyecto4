@@ -10,6 +10,7 @@
 
 char mostrarMenuAlta()
 {
+	printf("\n");
 	printf("1. Introducir estudiante\n");
 	printf("2. Introducir secretario\n");
 	printf("Pulsar 'n' para salir\n");

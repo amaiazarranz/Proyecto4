@@ -12,6 +12,7 @@
 
 void mostrarSecretarios (Secretario * s, int * size){
 
+	
 	printf ("Estos son todos los secretarios\n");
 
 	for (int i=0; i<*size; i++){
@@ -21,6 +22,8 @@ void mostrarSecretarios (Secretario * s, int * size){
 				(s+i)->apellido2, (s+i)-> dni, (s+i)->edad);
 
 	}
+
+	printf("\n");
 }
 
 void salariosOrdenados (Secretario * s, int * size){
@@ -62,7 +65,7 @@ void escribirFicheroSecretario (Secretario * s, int * size){
 }
 
 void borrarSecretario (Secretario * s, int *size){
-
+	
 	int num;
 	char string [5];
 

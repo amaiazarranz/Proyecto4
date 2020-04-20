@@ -14,7 +14,7 @@
 
 char mostrarMenuAltas()
 {
-	
+	printf("\n");
 	printf("1. Iniciar sesion\n");
 	printf("2. Dar alta\n");
 	printf("Pulsar 'n' para salir\n");
@@ -28,6 +28,7 @@ char mostrarMenuAltas()
 
 int main (void){
 
+	printf("\n");
 	printf ("Bienvenido a nuestra biblioteca\n");
 	fflush (stdout);
 

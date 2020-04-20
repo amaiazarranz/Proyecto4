@@ -114,3 +114,66 @@ void vaciar (char vaciar [])
 	}
 }
 
+int comprobarTituloCd (char* titulo, Cd* listaCd, int * size){
+
+	int result=0;
+	char * aux;
+
+	for(int i=0; i<*size; i++){
+
+		aux=(char*)malloc(strlen(((listaCd+i)->titulo)+1)*sizeof(char));
+		strcpy(aux, (listaCd+i)->titulo);
+
+		if((strcmp(titulo,aux))==0){
+
+			result=1;
+			break;
+
+		}
+	}
+
+	return result;
+
+}
+int comprobarTituloDvd (char* titulo, Dvd* listaD, int * size){
+
+
+	int result=0;
+	char * aux;
+
+	for(int i=0; i<*size; i++){
+
+		aux=(char*)malloc(strlen(((listaD+i)->titulo)+1)*sizeof(char));
+		strcpy(aux, (listaD+i)->titulo);
+
+		if((strcmp(titulo,aux))==0){
+
+			result=1;
+			break;
+		}
+	}
+
+	return result;
+}
+
+int comprobarTituloLibro (char* titulo, Libro* listaL, int * size){
+
+
+	int result=0;
+	char * aux;
+
+	for(int i=0; i<*size; i++){
+
+		aux=(char*)malloc(strlen(((listaL+i)->titulo)+1)*sizeof(char));
+		strcpy(aux, (listaL+i)->titulo);
+
+		if((strcmp(titulo,aux))==0){
+
+			result=1;
+			break;
+		}
+	}
+
+	return result;
+}
+

@@ -32,6 +32,30 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 	strcpy(titulo, str);
 
 	str[strlen(str)-1]='\0';
+
+	result=comprobarTituloCd(str, d, sizeD);
+
+	while(result==1){
+
+		printf("Introduzca un titulo que no este en el sistema: \n");
+		fflush(stdout);
+		fflush (stdin);
+		fgets(str,MAX_LINE,stdin);
+		fflush (stdin);
+
+		free(titulo);
+
+		int longitudTitulo=0;
+		longitudTitulo=strlen(str);
+		titulo=  (char*) malloc ((longitudTitulo+1)*sizeof(char));
+		titulo [strlen(titulo)-1]='\0';
+		strcpy(titulo, str);
+
+		str[strlen(str)-1]='\0';
+
+		result=comprobarTituloCd(str, d, sizeD);
+	}
+
 	strcpy((listaD)->titulo, str);
 
 	//AUTOR
@@ -66,6 +90,7 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 		result=comprobarLetra(autor);
 
 	}
+
 
 	sscanf(str, "%s", (listaD)->autor);
 

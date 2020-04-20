@@ -144,7 +144,7 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 	sscanf (str, "%s", (s)->apellido2);
 	
 
-	//CONTRASEÑA
+	//CONTRASENA
 	printf("Introduce la contrasena \n");
 	printf ("No os preocupeis que no hay ninguna restriccion\n");
 	fflush(stdout);
@@ -307,7 +307,10 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 	if (verificaDNI((s)->dni)){
 
 	  printf ("El DNI es correcto\n");
+	  fflush (stdout);
+	  
 	  printf("Ya se ha introducido el usuario\n");
+	  fflush (stdout);
 
 	}
 	else{
@@ -447,7 +450,7 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 
 	sscanf (str, "%s", (u)->apellido2);
 
-	//CONTRASEÑA
+	//CONTRASENA
 	printf("Introduce la contrasena \n");
 	printf ("No os preocupeis que no hay ninguna restriccion\n");
 	fflush(stdout);

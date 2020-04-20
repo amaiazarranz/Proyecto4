@@ -43,7 +43,7 @@ void salariosOrdenados (Secretario * s, int * size){
 
 		for (int i=0; i<*size; i++){
 
-			printf("%i€\n", salario[i]);
+			printf("%i euros\n", salario[i]);
 		}
 }
 

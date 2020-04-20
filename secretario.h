@@ -6,8 +6,8 @@ typedef struct {
 	char nombre [10];
 	char apellido1 [25];
 	char apellido2 [25];
-	char contrasena [50];
-	char dni [25];
+	char contrasena [40];
+	char dni [9];
 	int edad;
 	int sueldo;
 

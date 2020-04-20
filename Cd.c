@@ -11,10 +11,15 @@
 #include "operaciones.h"
 #define MAX_LINE 30
 
-void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
+void nuevoCd(Cd* listaC, Cd * d, int* sizeD){
 
 	char str[MAX_LINE];
 	int result;
+
+	vaciar (listaC->titulo);
+	vaciar (listaC->autor);
+	vaciar (listaC->categoria);
+	listaC->anyo=0;
 
 	//TITULO
 	printf("Introduce el titulo: \n");
@@ -33,7 +38,7 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 
 	str[strlen(str)-1]='\0';
 
-	result=comprobarTituloCd(str, d, sizeD);
+	result=comprobarTituloDvd(str, d, sizeD);
 
 	while(result==1){
 
@@ -53,10 +58,9 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 
 		str[strlen(str)-1]='\0';
 
-		result=comprobarTituloCd(str, d, sizeD);
+		result=comprobarTituloDvd(str, d, sizeD);
 	}
-
-	strcpy((listaD)->titulo, str);
+	strcpy((listaC)->titulo, str);
 
 	//AUTOR
 	printf("Introduce el autor: \n");
@@ -70,6 +74,7 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 	longitudAutor=strlen(str);
 	autor= (char*) malloc((longitudAutor+1)*sizeof(char));
 	sscanf(str, "%s", autor);
+
 	result=comprobarLetra(autor);
 
 	while(result==1){
@@ -91,8 +96,7 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 
 	}
 
-
-	sscanf(str, "%s", (listaD)->autor);
+	sscanf(str, "%s", (listaC)->autor);
 
 	//ANYO PUBLICACION
 	printf("Introduce el anyo de publicacion: \n");
@@ -124,7 +128,7 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 
 	}
 
-	sscanf(str, "%i", &(listaD)->anyo);
+	sscanf(str, "%i", &(listaC)->anyo);
 
 	//CATEGORIA
 	printf("Introduce la categoria: \n");
@@ -140,7 +144,6 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 	sscanf(str, "%s", categoria);
 
 	result=comprobarLetra(categoria);
-
 
 	while(result==1){
 
@@ -161,7 +164,7 @@ void nuevoCd(Cd* listaD, Cd * d, int* sizeD){
 
 	}
 
-	sscanf(str, "%s", (listaD)->categoria);
+	sscanf(str, "%s", (listaC)->categoria);
 
 }
 
@@ -221,46 +224,53 @@ void borrarCd( Cd* listaL,int* size){
 	int num;
 	char string [10];
 
-	printf ("Los Cd que tenemos ahora son:\n");
+	if (*size==0){
 
-	for (int i=0; i<*size; i++){
+			printf("No hay ningun DVD por lo que no se puede borrar\n");
 
-		printf ("%i) Titulo: %s, Autor %s, "
-		"Anyo: %i, Categoria: %s\n", (i+1), (listaL+i)->titulo, (listaL+i)->autor,
-		(listaL+i)-> anyo, (listaL+i) ->categoria);
 	}
+	else{
 
-	printf ("Inserte el numero del Cd que quieras eliminar\n");
-	fflush (stdout);
+		printf ("Los Cd que tenemos ahora son:\n");
 
-	fgets(string, 10, stdin);
-	sscanf (string, "%i", &num);
-
-	printf("El Cd que quieres borrar es el siguiente %s\n", (listaL+num-1)->titulo); //-1 PORQUE METES EL QUE LE APARECE AL USUARIO
-
-	for(int i= num-1; i<*size-1; i+=1)
-	{
-	       listaL[i]= listaL[i+1];
-	}
-	*size-=1;
-
-	if(*size>0){
-		printf ("Los Cd que tenemos despues del borrado son:\n");
-
-		for (int i=0; i<*size; i++)
-		{
+		for (int i=0; i<*size; i++){
 
 			printf ("%i) Titulo: %s, Autor %s, "
 			"Anyo: %i, Categoria: %s\n", (i+1), (listaL+i)->titulo, (listaL+i)->autor,
 			(listaL+i)-> anyo, (listaL+i) ->categoria);
 		}
+
+		printf ("Inserte el numero del Cd que quieras eliminar\n");
+		fflush (stdout);
+
+		fgets(string, 10, stdin);
+		sscanf (string, "%i", &num);
+
+		printf("El Cd que quieres borrar es el siguiente %s\n", (listaL+num-1)->titulo); //-1 PORQUE METES EL QUE LE APARECE AL USUARIO
+
+		for(int i= num-1; i<*size-1; i+=1)
+		{
+			   listaL[i]= listaL[i+1];
+		}
+		*size-=1;
+
+		if(*size>0){
+			printf ("Los Cd que tenemos despues del borrado son:\n");
+
+			for (int i=0; i<*size; i++)
+			{
+
+				printf ("%i) Titulo: %s, Autor %s, "
+				"Anyo: %i, Categoria: %s\n", (i+1), (listaL+i)->titulo, (listaL+i)->autor,
+				(listaL+i)-> anyo, (listaL+i) ->categoria);
+			}
+		}
+		else{
+
+			printf("No hay ningun Cd\n");
+		}
+
 	}
-	else{
-
-		printf("No hay ningun Cd\n");
-	}
-
-
 }
 
 Cd* leerFicheroCd(int* size){

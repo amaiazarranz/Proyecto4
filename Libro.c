@@ -16,8 +16,15 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 	char str[MAX_LINE];
 	int result;
 
+	vaciar (listaL->titulo);
+	vaciar (listaL->autor);
+	vaciar (listaL->categoria);
+	vaciar (listaL->editorial);
+	listaL->anyo=0;
+
 	//TITULO
 	printf("Introduce el titulo: \n");
+	printf("Puede tener mas de una palabra\n");
 	fflush(stdout);
 	fflush (stdin);
 	fgets(str,MAX_LINE,stdin);
@@ -163,7 +170,6 @@ void nuevoLibro(Libro* listaL, Libro * l, int* size){
 
 	sscanf(str, "%i", &(listaL)->anyo);
 
-
 	//CATEGORIA
 	printf("Introduce la categoria: \n");
 	fflush(stdout);
@@ -252,42 +258,50 @@ void borrarLibro( Libro* listaL,int* size){
 	int num;
 	char string [10];
 
-	printf ("Los libros que tenemos ahora son:\n");
+	if (*size==0){
 
-	for (int i=0; i<*size; i++){
+			printf("No hay ningun libro por lo que no se puede borrar\n");
 
-		printf ("%i) Titulo: %s, Autor %s, Editorial %s, "
-				"Anyo: %i, Categoria: %s\n", (i+1), (listaL+i)->titulo, (listaL+i)->autor, (listaL+i)->editorial,
-				(listaL+i)-> anyo, (listaL+i) ->categoria);
-	}
-
-	printf ("Inserte el numero del libro que quieras eliminar\n");
-	fflush (stdout);
-
-	fgets(string, 10, stdin);
-	sscanf (string, "%i", &num);
-
-	printf("El libro que quieres borrar es el siguiente %s\n", (listaL+num-1)->titulo); //-1 PORQUE METES EL QUE LE APARECE AL USUARIO
-
-	for(int i= num-1; i<*size-1; i+=1){
-			listaL[i]= listaL[i+1];
 		}
-	*size-=1;
+	else{
 
-	if(*size>0){
-	printf ("Los libros que tenemos despues del borrado son:\n");
+		printf ("Los libros que tenemos ahora son:\n");
 
 		for (int i=0; i<*size; i++){
 
-				printf ("%i) Titulo: %s, Autor %s, Editorial %s, "
-						"Anyo: %i, Categoria: %s\n", (i+1), (listaL+i)->titulo, (listaL+i)->autor, (listaL+i)->editorial,
-						(listaL+i)-> anyo, (listaL+i) ->categoria);
+			printf ("%i) Titulo: %s, Autor %s, Editorial %s, "
+					"Anyo: %i, Categoria: %s\n", (i+1), (listaL+i)->titulo, (listaL+i)->autor, (listaL+i)->editorial,
+					(listaL+i)-> anyo, (listaL+i) ->categoria);
 		}
-	}
-	else{
-		printf("No hay ningun libro\n");
-	}
 
+		printf ("Inserte el numero del libro que quieras eliminar\n");
+		fflush (stdout);
+
+		fgets(string, 10, stdin);
+		sscanf (string, "%i", &num);
+
+		printf("El libro que quieres borrar es el siguiente %s\n", (listaL+num-1)->titulo); //-1 PORQUE METES EL QUE LE APARECE AL USUARIO
+
+		for(int i= num-1; i<*size-1; i+=1){
+				listaL[i]= listaL[i+1];
+			}
+		*size-=1;
+
+		if(*size>0){
+		printf ("Los libros que tenemos despues del borrado son:\n");
+
+			for (int i=0; i<*size; i++){
+
+					printf ("%i) Titulo: %s, Autor %s, Editorial %s, "
+							"Anyo: %i, Categoria: %s\n", (i+1), (listaL+i)->titulo, (listaL+i)->autor, (listaL+i)->editorial,
+							(listaL+i)-> anyo, (listaL+i) ->categoria);
+			}
+		}
+		else{
+			printf("No hay ningun libro\n");
+		}
+
+	}
 	
 }
 

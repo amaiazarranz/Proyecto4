@@ -56,35 +56,42 @@ void borrarUsuario (Usuario * u, int * size){
 	int num;
 	char string [10];
 
-	printf ("Los estudiantes que tenemos ahora son:\n");
+	if (*size==0){
 
-	for (int i=0; i<*size; i++){
+		printf("No hay usuarios por lo que no podemos borrar\n");
 
-		printf ("%i) Nombre: %s, Primero Apellido: %s, Segundo Apellido %s, "
-				"DNI: %s, Edad: %i\n", (i+1), (u+i)->nombre, (u+i)->apellido1, (u+i)->apellido2, (u+i)-> dni, (u+i) ->edad);
 	}
 
-	printf ("Inserte el numero del usuario que quieras eliminar\n");
-	fflush (stdout);
+	else{
+		printf ("Los estudiantes que tenemos ahora son:\n");
 
-	fgets(string, 10, stdin);
-	sscanf (string, "%i", &num);
+		for (int i=0; i<*size; i++){
 
-	printf("El usuario que quieres borrar es el siguiente %s\n", (u+num-1)->nombre); //-1 PORQUE METES EL QUE LE APARECE AL USUARIO
+			printf ("%i) Nombre: %s, Primero Apellido: %s, Segundo Apellido %s, "
+					"DNI: %s, Edad: %i\n", (i+1), (u+i)->nombre, (u+i)->apellido1, (u+i)->apellido2, (u+i)-> dni, (u+i) ->edad);
+		}
 
-	for(int i= num-1; i<*size-1; i+=1){
-	        u[i]= u[i+1];
-	    }
-	*size-=1;
+		printf ("Inserte el numero del usuario que quieras eliminar\n");
+		fflush (stdout);
 
-	printf ("Los estudiantes que tenemos despues del borrado son:\n");
+		fgets(string, 10, stdin);
+		sscanf (string, "%i", &num);
 
-	for (int i=0; i<*size; i++){
+		printf("El usuario que quieres borrar es el siguiente %s\n", (u+num-1)->nombre); //-1 PORQUE METES EL QUE LE APARECE AL USUARIO
 
-		printf ("%i) Nombre: %s, Primero Apellido: %s, Segundo Apellido %s, "
-				"DNI: %s, Edad: %i\n", (i+1), (u+i)->nombre, (u+i)->apellido1, (u+i)->apellido2, (u+i)-> dni, (u+i) ->edad);
+		for(int i= num-1; i<*size-1; i+=1){
+				u[i]= u[i+1];
+			}
+		*size-=1;
+
+		printf ("Los estudiantes que tenemos despues del borrado son:\n");
+
+		for (int i=0; i<*size; i++){
+
+			printf ("%i) Nombre: %s, Primero Apellido: %s, Segundo Apellido %s, "
+					"DNI: %s, Edad: %i\n", (i+1), (u+i)->nombre, (u+i)->apellido1, (u+i)->apellido2, (u+i)-> dni, (u+i) ->edad);
+		}
 	}
-
 
 }
 

@@ -27,6 +27,21 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 
 	char str [MAX_LINE];
 	int result;
+	vaciar (s->nombre);
+	vaciar (s->apellido1);
+	vaciar (s->apellido2);
+	vaciar (s->contrasena);
+	vaciar (s->dni);
+	s->edad=0;
+	s->sueldo=0;
+
+//	printf("Nombre: %s\n", s->nombre);
+//	printf("Ape1: %s\n", s->apellido1);
+//	printf("Ape2: %s\n", s->apellido2);
+//	printf("Contra: %s\n", s->contrasena);
+//	printf("Sueldo: %s\n", s->dni);
+//	printf("Edad: %i\n", s->edad);
+//	printf("Sueldo: %i\n", s->sueldo);
 
 	//NOMBRE
 	printf("Introduce nombre: \n");
@@ -301,12 +316,36 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 		introducirUsuario (s, p, sizeSecre, p2, sizeUsu);
 	}
 
+//	printf("Nombre: %s\n", s->nombre);
+//		printf("Ape1: %s\n", s->apellido1);
+//		printf("Ape2: %s\n", s->apellido2);
+//		printf("Contra: %s\n", s->contrasena);
+//		printf("Sueldo: %s\n", s->dni);
+//		printf("Edad: %i\n", s->edad);
+//		printf("Sueldo: %i\n", s->sueldo);
+
 }
 
 void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario * p2, int * sizeSecretarios){
 
 	char str [MAX_LINE];
 	int result;
+
+	vaciar (u->nombre);
+	vaciar (u->apellido1);
+	vaciar (u->apellido2);
+	vaciar (u->contrasena);
+	vaciar (u->dni);
+	u->edad=0;
+
+//	printf("Nombre: %s\n", u->nombre);
+//	printf("Ape1: %s\n", u->apellido1);
+//	printf("Ape2: %s\n", u->apellido2);
+//	printf("Contra: %s\n", u->contrasena);
+//	printf("Sueldo: %s\n", u->dni);
+//	printf("Edad: %i\n", u->edad);
+//	printf("Sueldo: %i\n", s->sueldo);
+
 
 	//NOMBRE
 	printf("Introduce nombre: \n");

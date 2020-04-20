@@ -397,7 +397,7 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 		fgets(str, MAX_LINE, stdin);
 		fflush (stdin);
 
-		free(apellido2);s
+		free(apellido2);
 		longitudapellido2=strlen(str);
 		apellido2=malloc ((longitudapellido2+1)*sizeof(char));
 		sscanf(str, "%s", apellido2);
@@ -493,16 +493,16 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 		}
 		for (int j=0; j<*sizeSecretarios; j++){
 
-		resultado2=strcmp(dnic, (p2+j)->dni);
-		if (resultado2==0){
+			resultado2=strcmp(dnic, (p2+j)->dni);
+			if (resultado2==0){
 
-			printf("Te has equivocado. Ya existe otro secretario que tenga ese DNI. Ingrese otro DNI\n");
-			comprobar2=1;
+				printf("Te has equivocado. Ya existe otro secretario que tenga ese DNI. Ingrese otro DNI\n");
+				comprobar2=1;
 
-			printf ("Introduzca un DNI valido\n");
-			fflush(stdout);
+				printf ("Introduzca un DNI valido\n");
+				fflush(stdout);
 
-			break;
+				break;
 
 			}
 		}
@@ -516,6 +516,7 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 
 	  printf ("El DNI es correcto\n");
 	  printf("Ya se ha introducido el usuario\n");
+	  fflush(stdout);
 
 	}
 	else{

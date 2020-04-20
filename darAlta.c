@@ -51,10 +51,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 		fgets(str, MAX_LINE, stdin);
 		fflush (stdin);
 
-		char *nombre;
-		int longitudNombre2=0;
-		longitudNombre2=strlen(str);
-		nombre= (char*)malloc ((longitudNombre2+1)*sizeof(char));
+		free(nombre);
+		longitudNombre=strlen(str);
+		nombre= (char*)malloc ((longitudNombre+1)*sizeof(char));
 		sscanf(str, "%s", nombre);
 
 		result=comprobarLetra(nombre);
@@ -85,10 +84,9 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 		fgets(str, MAX_LINE, stdin);
 		fflush (stdin);
 
-		char *apellido;
-		int longitudapellido2=0;
-		longitudapellido2=strlen(str);
-		apellido= (char*) malloc ((longitudapellido2+1)*sizeof(char));
+		free(apellido);
+		longitudapellido=strlen(str);
+		apellido= (char*) malloc ((longitudapellido+1)*sizeof(char));
 		sscanf(str, "%s", apellido);
 
 		result=comprobarLetra(apellido);
@@ -119,8 +117,7 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 		fgets(str, MAX_LINE, stdin);
 		fflush (stdin);
 
-		char *apellido4;
-		int longitudapellido4=0;
+		free(apellido4);
 		longitudapellido4=strlen(str);
 		apellido4=malloc ((longitudapellido4+1)*sizeof(char));
 		sscanf(str, "%s", apellido4);
@@ -129,7 +126,7 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 	}
 
 	sscanf (str, "%s", (s)->apellido2);
-	printf("%s \n",(s)->apellido2 );
+	
 
 	//CONTRASEÑA
 	printf("Introduce la contrasena \n");
@@ -171,8 +168,7 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 			fgets(str, MAX_LINE, stdin);
 			fflush (stdin);
 
-			char *sueldo;
-			int longitudsueldo=0;
+			free(sueldo);
 			longitudsueldo=strlen(str);
 			sueldo=malloc ((longitudsueldo+1)*sizeof(char));
 			sscanf(str, "%s", sueldo);
@@ -219,8 +215,7 @@ void introducirSecretario (Secretario * s, Secretario *p, int * sizeSecre, Usuar
 		fgets(str, MAX_LINE, stdin);
 		fflush (stdin);
 
-		char *edad;
-		int longitudedad=0;
+		free(edad);
 		longitudedad=strlen(str);
 		edad=malloc ((longitudedad+1)*sizeof(char));
 		sscanf(str, "%s", edad);
@@ -336,10 +331,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 		fgets(str, MAX_LINE, stdin);
 		fflush (stdin);
 
-		char *nombre;
-		int longitudNombre2=0;
-		longitudNombre2=strlen(str);
-		nombre=malloc ((longitudNombre2+1)*sizeof(char));
+		free(nombre);
+		longitudNombre=strlen(str);
+		nombre=malloc ((longitudNombre+1)*sizeof(char));
 		sscanf(str, "%s", nombre);
 
 		result=comprobarLetra(nombre);
@@ -370,10 +364,9 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 		fgets(str, MAX_LINE, stdin);
 		fflush (stdin);
 
-		char *apellido;
-		int longitudapellido2=0;
-		longitudapellido2=strlen(str);
-		apellido=malloc ((longitudapellido2+1)*sizeof(char));
+		free(apellido);
+		longitudapellido=strlen(str);
+		apellido=malloc ((longitudapellido+1)*sizeof(char));
 		sscanf(str, "%s", apellido);
 
 		result=comprobarLetra(apellido);
@@ -404,8 +397,7 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 		fgets(str, MAX_LINE, stdin);
 		fflush (stdin);
 
-		char *apellido2;
-		int longitudapellido2=0;
+		free(apellido2);s
 		longitudapellido2=strlen(str);
 		apellido2=malloc ((longitudapellido2+1)*sizeof(char));
 		sscanf(str, "%s", apellido2);
@@ -448,8 +440,7 @@ void introducirUsuario (Usuario * u, Usuario *p, int * sizeUsuarios, Secretario 
 		fgets(str, MAX_LINE, stdin);
 		fflush (stdin);
 
-		char *edad;
-		int longitudedad=0;
+		free(edad);
 		longitudedad=strlen(str);
 		edad=malloc ((longitudedad+1)*sizeof(char));
 		sscanf(str, "%s", edad);
